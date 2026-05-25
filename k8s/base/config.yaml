@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+type: Opaque
+stringData:
+  POSTGRES_USER: "messenger_user"
+  POSTGRES_PASSWORD: "messenger_password"
+  POSTGRES_DB: "messenger_db"
+  # Строки подключения для микросервисов
+  USER_DB_DSN: "postgres://messenger_user:messenger_password@postgres:5432/messenger_db?sslmode=disable"
+  MSG_DB_DSN: "postgres://messenger_user:messenger_password@postgres:5432/messenger_db?sslmode=disable"
